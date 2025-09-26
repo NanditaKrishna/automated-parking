@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Parking Lot Automation System - Main Entry Point
+# This script runs the parking lot automation system
+
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_DIR="$(dirname "$SCRIPT_DIR")"
+
+# Change to project directory
+cd "$PROJECT_DIR"
+
+# Check if the application is built
+if [ ! -d "dist" ]; then
+    echo "❌ Application not built. Please run ./bin/setup first."
+    exit 1
+fi
+
+# Run the application
+node dist/index.js "$@"

@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Parking Lot Automation System - Setup Script
+# This script installs dependencies, compiles code, and runs tests
+
+set -e  # Exit on any error
+
+echo "🚗 Setting up Parking Lot Automation System..."
+
+# Check if Node.js is installed
+if ! command -v node &> /dev/null; then
+    echo "❌ Node.js is not installed. Please install Node.js first."
+    exit 1
+fi
+
+# Check if npm is installed
+if ! command -v npm &> /dev/null; then
+    echo "❌ npm is not installed. Please install npm first."
+    exit 1
+fi
+
+echo "📦 Installing dependencies..."
+npm install
+
+echo "🔨 Compiling TypeScript code..."
+npm run build
+
+echo "🧪 Running tests..."
+npm test
+
+echo "✅ Setup completed successfully!"
+echo ""
+echo "You can now run the parking lot system:"
+echo "  Interactive mode: ./bin/parking_lot"
+echo "  File mode: ./bin/parking_lot <input_file>"
+echo ""
+echo "Example:"
+echo "  ./bin/parking_lot sample_inputs/example.txt"

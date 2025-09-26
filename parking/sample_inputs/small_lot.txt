@@ -1,0 +1,11 @@
+create_parking_lot 3
+park KA-01-HH-1234 White
+park KA-01-HH-9999 Black
+park KA-01-BB-0001 Red
+park KA-01-HH-7777 Blue
+leave 2
+park KA-01-HH-2701 Green
+status
+registration_numbers_for_cars_with_colour White
+slot_numbers_for_cars_with_colour Black
+slot_number_for_registration_number KA-01-HH-9999
